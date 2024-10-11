@@ -21,7 +21,6 @@ build-backend = "flit_core.buildapi"
 
 [tool.flit.sdist]
 include = [
-    "sphinx_docs/",
     "flaskr",
     "requirements.txt",
 ]
