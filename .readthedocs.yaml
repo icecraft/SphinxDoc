@@ -8,6 +8,6 @@ python:
     - method: pip
       path: .
 sphinx:
-  configuration: sphinx_docs/conf.py
+  configuration: sphinx_docs/source/conf.py
   builder: dirhtml
 
