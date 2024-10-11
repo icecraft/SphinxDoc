@@ -1,41 +1,37 @@
-[project]
-name = "sphinx_docs"
-version = "0.1.0.dev"
-description = "Just for test Sphinx Docs."
-maintainers = [{name = "Test", email = "contact@test.com"}]
-classifiers = [
-    "Programming Language :: Python"
+[tool.poetry]
+name = "flaskr"
+version = "0.1.0-dev"
+description = "test."
+authors = ["tester"]
+maintainers = [
+    "tester",
 ]
-requires-python = "==3.10"
-dependencies = [
-    "flask",
-    "sphinx",
-]
+license = "MIT"
+include = [{ path = "tests", format = "sdist" }]
+homepage = "https://python-poetry.org/"
+repository = "https://github.com/python-poetry/poetry"
+documentation = "https://python-poetry.org/docs"
 
-[project.urls]
-Source = "https://github.com/icecraft/SphinxDoc"
+
+[tool.poetry.urls]
+Changelog = "https://python-poetry.org/history/"
+
+# Requirements
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "^3.0.3"
+sphinx = "^8.1.0"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = ">=2.10"
+# add setuptools for PyCharm
+# see https://youtrack.jetbrains.com/issue/PY-48909
+# and https://github.com/JetBrains/intellij-community/commit/3f37786ec0bf5066e4527690d1068b5a00680ea3
+setuptools = { version = ">=60", python = "<3.10" }
+
+
 
 [build-system]
-requires = ["flit_core<4"]
-build-backend = "flit_core.buildapi"
+requires = ["poetry-core>=1.5.0"]
+build-backend = "poetry.core.masonry.api"
 
-[tool.flit.sdist]
-include = [
-    "flaskr",
-    "requirements.txt",
-]
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-filterwarnings = [
-    "error",
-]
-
-[[tool.mypy.overrides]]
-module = [
-    "asgiref.*",
-    "dotenv.*",
-    "cryptography.*",
-    "importlib_metadata",
-]
-ignore_missing_imports = true
