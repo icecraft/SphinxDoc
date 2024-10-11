@@ -31,10 +31,75 @@
 
           <div class="body" role="main">
             
-  <section id="welcome-to-getting-started-with-sphinx-s-documentation">
-<h1>Welcome to Getting Started with Sphinx’s documentation!<a class="headerlink" href="#welcome-to-getting-started-with-sphinx-s-documentation" title="Link to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-</div>
+  <section id="module-flaskr">
+<span id="welcome-to-getting-started-with-sphinx-s-documentation"></span><h1>Welcome to Getting Started with Sphinx’s documentation!<a class="headerlink" href="#module-flaskr" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="flaskr.create_app">
+<span class="sig-prename descclassname"><span class="pre">flaskr.</span></span><span class="sig-name descname"><span class="pre">create_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flaskr.create_app" title="Link to this definition">¶</a></dt>
+<dd><p>Create and configure an instance of the Flask application.</p>
+</dd></dl>
+
+<dl class="py function" id="module-flaskr.auth">
+<dt class="sig sig-object py" id="flaskr.auth.load_logged_in_user">
+<span class="sig-prename descclassname"><span class="pre">flaskr.auth.</span></span><span class="sig-name descname"><span class="pre">load_logged_in_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flaskr.auth.load_logged_in_user" title="Link to this definition">¶</a></dt>
+<dd><p>If a user id is stored in the session, load the user object from
+the database into <code class="docutils literal notranslate"><span class="pre">g.user</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="flaskr.auth.login">
+<span class="sig-prename descclassname"><span class="pre">flaskr.auth.</span></span><span class="sig-name descname"><span class="pre">login</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flaskr.auth.login" title="Link to this definition">¶</a></dt>
+<dd><p>Log in a registered user by adding the user id to the session.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="flaskr.auth.login_required">
+<span class="sig-prename descclassname"><span class="pre">flaskr.auth.</span></span><span class="sig-name descname"><span class="pre">login_required</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flaskr.auth.login_required" title="Link to this definition">¶</a></dt>
+<dd><p>View decorator that redirects anonymous users to the login page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="flaskr.auth.logout">
+<span class="sig-prename descclassname"><span class="pre">flaskr.auth.</span></span><span class="sig-name descname"><span class="pre">logout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flaskr.auth.logout" title="Link to this definition">¶</a></dt>
+<dd><p>Clear the current session, including the stored user id.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="flaskr.auth.register">
+<span class="sig-prename descclassname"><span class="pre">flaskr.auth.</span></span><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flaskr.auth.register" title="Link to this definition">¶</a></dt>
+<dd><p>Register a new user.</p>
+<p>Validates that the username is not already taken. Hashes the
+password for security.</p>
+</dd></dl>
+
+<dl class="py function" id="module-flaskr.db">
+<dt class="sig sig-object py" id="flaskr.db.close_db">
+<span class="sig-prename descclassname"><span class="pre">flaskr.db.</span></span><span class="sig-name descname"><span class="pre">close_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flaskr.db.close_db" title="Link to this definition">¶</a></dt>
+<dd><p>If this request connected to the database, close the
+connection.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="flaskr.db.get_db">
+<span class="sig-prename descclassname"><span class="pre">flaskr.db.</span></span><span class="sig-name descname"><span class="pre">get_db</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flaskr.db.get_db" title="Link to this definition">¶</a></dt>
+<dd><p>Connect to the application’s configured database. The connection
+is unique for each request and will be reused if this is called
+again.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="flaskr.db.init_app">
+<span class="sig-prename descclassname"><span class="pre">flaskr.db.</span></span><span class="sig-name descname"><span class="pre">init_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flaskr.db.init_app" title="Link to this definition">¶</a></dt>
+<dd><p>Register database functions with the Flask app. This is called by
+the application factory.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="flaskr.db.init_db">
+<span class="sig-prename descclassname"><span class="pre">flaskr.db.</span></span><span class="sig-name descname"><span class="pre">init_db</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flaskr.db.init_db" title="Link to this definition">¶</a></dt>
+<dd><p>Clear existing data and create new tables.</p>
+</dd></dl>
+
 </section>
 <section id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">¶</a></h1>

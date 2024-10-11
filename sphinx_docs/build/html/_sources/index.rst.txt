@@ -1,8 +1,14 @@
 Welcome to Getting Started with Sphinx's documentation!
 =======================================================
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+.. automodule:: flaskr
+   :members:
+
+.. automodule:: flaskr.auth
+   :members:
+
+.. automodule:: flaskr.db
+   :members:
+
 Indices and tables
 ==================
 * :ref:`genindex`
